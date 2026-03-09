@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="fw-bold">Student Management System</h1>
+
+        <a href="/new" class="btn btn-outline-secondary btn-lg">
+            New Student
+        </a>
+    </div>
+
+
+    <!-- Student Cards -->
+    <% students.forEach(student => { %>
+
+    <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+
+            <h2 class="fw-bold"><%= student.name %></h2>
+
+            <p class="fs-4 text-muted">Roll: <%= student.roll %></p>
+
+            <hr>
+
+            <div class="text-end">
+
+                <a href="/edit/<%= student._id %>" class="btn btn-link fs-5">
+                    Edit
+                </a>
+
+                <a href="/delete/<%= student._id %>" class="btn btn-danger">
+                    Delete
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+    <% }) %>
+
+</div>
+
+</body>
+</html>
